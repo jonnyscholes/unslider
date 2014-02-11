@@ -1,4 +1,3 @@
-(function ($) {
   /**
    *   Unslider by @idiot and @damirfoy
    *   Contributors:
@@ -72,7 +71,7 @@
         ul.css({position: 'relative', left: 0, width: (len * 100) + '%'});
 
         //  Autoslide
-        o.autoplay && setTimeout(function () {
+        o.autoplay && setTimeout(function() {
           if (o.delay | 0) {
             _.play();
 
@@ -81,8 +80,8 @@
                 _.stop();
                 e.type == 'mouseout' && _.play();
               });
-            }
-          }
+            };
+          };
         }, o.init | 0);
 
         //  Keypresses
@@ -97,7 +96,7 @@
             else if (key == 27)
               _.stop(); // Esc
           });
-        }
+        };
 
         //  Dot pagination
         var cont = (_.el.find(o.dotsContainer).length !== 0) ? _.el.find(o.dotsContainer) : $('<ol class="'+ o.dotsContainer +'"/>');
@@ -120,14 +119,14 @@
               el.css(styl);
             }, 50);
           }).resize();
-        }
+        };
 
         //  Swipe support
         if ($.event.special['swipe'] || $.Event('swipe')) {
           el.on('swipeleft swiperight swipeLeft swipeRight', function(e) {
             e.type.toLowerCase() == 'swipeleft' ? _.next() : _.prev();
           });
-        }
+        };
 
         return _;
       };
@@ -176,7 +175,7 @@
 
             $.isFunction(o.complete) && !callback && o.complete(el, target);
           });
-        }
+        };
       };
 
       //  Autoplay functionality
